@@ -1,0 +1,52 @@
+include:
+  - template: Jobs/SAST.gitlab-ci.yml
+
+cache:
+  paths:
+    - .m2/repository
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository"
+  DB_URL: jdbc:h2:./database
+  DB_USERNAME: 
+  DB_PASSWORD: 
+
+stages:
+  - build
+  - test
+  - package
+
+build-libraryManagementSystem:
+  stage: build
+  image: maven:3.9-eclipse-temurin-21
+  script:
+    - echo 'Starting Build Stage'
+    - cd JavaFX
+    - mvn compile
+
+test-libraryManagementSystem:
+  stage: test
+  image: maven:3.9-eclipse-temurin-21
+  script:
+    - echo 'Starting Test Stage'
+    - cd JavaFX
+    - mvn test -Dtest='!IssueReturnControllerTest,!LmsControllerTest,!LoginControllerTest,!HQLManager,!ISBNTest,!PasswordTest'
+  artifacts:
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+
+package-libraryManagementSystem:
+  stage: package
+  image: maven:3.9-eclipse-temurin-21
+  script:
+    - echo 'Starting Package Stage'
+    - cd JavaFX
+    - mvn test -Dtest='!IssueReturnControllerTest,!LmsControllerTest,!LoginControllerTest,!HQLManager,!ISBNTest,!PasswordTest'
+  only:
+    refs:
+      - main
+  artifacts:
+    paths:
+      - target/*.jar
+    expire_in: 2 days

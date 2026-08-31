@@ -1,0 +1,84 @@
+## [1.0.0] - 2023-07-13
+- using atlantaFx dependency instead of css stylesheet, add: lms logo
+- deleted nativeQuery which didn't work
+- added check for picking issue and return date. Also added so that the listView updates after issue and return
+## [0.4.0] - 2023-07-01
+- Merge branch '16-ci-cd' into 'developer'
+- Add .gitlab-ci.yml file
+- Merge branch '5-testing' into 'developer'
+- Adding the isbnRequirements method to the addBook and updateBook methods. Added unitTests to check isbn
+- ISBN check implemented for 10 and 13 long numbers and added corresponding unit tests
+- add: ISBNTest class
+- isbn requierments
+- check for isbn
+- add: unitTests for LmsController, LoginController, and IssueReturnController
+- add: unitTests for LmsController, LoginController, and IssueReturnController
+- added TestClass for HQLManager
+- fixed Test for Controller classes
+- rename signup2 to addUser, add: loginControllerTest class
+- change project structure for validate login and sigUp methods. Add: UnitTest for password requirements.
+- Merge branch '5-Testing' into '5-testing'
+- fixed a bug in issue and return Media. The List which the Application used was a diffrent than the one shown
+- Merge branch 'developer' into '5-testing'
+- fixed methods that didn't work properly after changing the package structure
+- added Package Structure
+- update: LoginController with modified loadNewStage method
+- add: database test data for books and movies
+- View Media Issued functionality (correction)
+## [0.3.0] - 2023-06-25
+- Merge branch 'IssueAndReturn' into 'developer'
+- add: retunMedia method to allow users to return their books and movies, modify: initialize method, add: updateQuery in HibernateUtil
+- updated loadListVíew method, now it's possible to load two tables into a listView
+- add: issue date and return date label, modified issueMedia method to handle label
+- update: login and signUp fxml
+- implemented issue Media, modified HibernateUtil to save code, modified Media classes/deletet issued state, modified the tables accordingly and added tables issue_Movies and issue_Books, modified fxml files
+- modify: rezise login and signUp fxml
+- update: adapted login and signup to the new method getQueryResult
+- made a universal query method. getalluserfromdb needs to be replaced with the new method
+- added class attribute userId to book and movie
+- add: animationFX dependency and assign it to login and signup validation
+## [0.2.0] - 2023-06-22
+- updated gitIgnore
+- delted .ds_store file and fixed a bug
+- Merge branch 'login' into 'developer'
+- adopted changes from login
+- adopted changes from developer
+- update: login methods, add: loginManager class
+- Merge branch 'developer' into 'main'
+## [0.1.0] - 2023-06-22
+- added stylesheet to login and signUp
+- overworked the GUI and added placeholder fxml for issueing media. Also added an alternative stylesheet and made the GUI functional
+- Merge branch '9-listview' into 'developer'
+- adding methods to register a new user
+- implemented method to load books into a listview and added methods so it's possible to add and update books through the gui. Also added a placeholder styleheet
+- update: validateLogin - method
+- add: validateLogin-method, add: username, password to database, add: preparedStatement-method
+- Merge branch 'placeholderGui' into 'developer'
+- added placeholder fxml and a method to load the files
+- Merge branch 'bookClass' into 'main'
+- update method 2.0
+- update method
+- add CRUD method
+- added method to delete Media from the database
+- added Enums for Media classes and implemented a method to fetchdata from the database
+- added MediaInterface, BookClass, MediaFactory, MovieClass and the corresponding tables
+- Merge branch '1-integration-of-hibernate' into 'main'
+- Merge branch 'main' into '1-integration-of-hibernate'
+- deleted unnecessary file
+- Hibernate implemented
+- add JavaFx folder
+- delete JavaFX Folder
+- Bug Fixing
+- sqlite
+- update
+- update .idea file
+- update .idea file
+- Hibernate session Factory/ work in progress
+- update maven dependencies
+- Adding jakarta.persistence annotations
+- added embedded database
+- update gitignore
+- update settings
+- Update - gitIgnore File
+- JavaFX File
+- Initial commit
